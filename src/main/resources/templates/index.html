@@ -8,7 +8,7 @@
 <body>
 <header th:replace="header.html :: templateHeader">
 </header>
-<form method="get" action="doctor">
+<form method="get" th:action="@{/doctor(name=${name},number=${number})}">
     <fieldset>
         <label for="name">Your doctor's name: </label>
         <input id="name" name="name" type="text" placeholder="Your name here">
