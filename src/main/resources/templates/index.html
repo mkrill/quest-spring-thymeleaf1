@@ -8,6 +8,9 @@
 <body>
 <header th:replace="header.html :: templateHeader">
 </header>
+<!-- 	M. Krill (09.12.): sorgt dafür, dass HttpServletResponse.encodeURL aufgerufen wird, 
+		um ggf. eine Session ID automatisiert über den Servlet-Container zu ergänzen 
+		(siehe Tomcat-Doku) -->
 <form method="get" th:action="@{/doctor(name=${name},number=${number})}">
     <fieldset>
         <label for="name">Your doctor's name: </label>
