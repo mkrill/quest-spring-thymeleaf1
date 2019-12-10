@@ -11,7 +11,7 @@
 		<!-- 	M. Krill (09.12.): thymeleaf action sorgt dafür, dass HttpServletResponse.encodeURL aufgerufen wird, 
 				um ggf. eine Session ID automatisiert über den Servlet-Container zu ergänzen 
 				(siehe Tomcat-Doku) -->
-		<form th:method="get" th:action="@{/doctor}">
+		<form th:method="post" th:action="@{/doctor}">
 		    <fieldset>
 		        <label for="name">Your doctor's name: </label>
 		        <input id="name" name="name" type="text" placeholder="Your name here">
@@ -20,6 +20,8 @@
 		        <input id="number" name="number" type="number" placeholder="0">
 		        <hr>
 		        <input type="submit" value="Sign In">
+		        // Ein Beispiel für die Übergabe eines statischen Parameters über die Rückmeldung:
+		        <input type="hidden" name="nnumber" value="42">
 		    </fieldset>
 		</form>
 		<footer th:replace="footer.html :: templateFooter">
