@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Doctor Secret Room</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta th:replace="index.html :: templateMeta"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header th:replace="header.html :: templateHeader">Header TODO</header>
 <section>
-    <h1 th:text="|Welcome ${name}!|">Welcome John Smith</h1>
+    <h1 th:text="|Welcome ${name}!|">Wilcome John Smith</h1>
     <h3 th:text="|Your number is ${number}!|">Your number is 0</h3>
 </section>
 <footer th:replace="footer.html :: templateFooter">Footer TODO</footer>

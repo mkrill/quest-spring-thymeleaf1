@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Doctor Sign In</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header th:replace="header.html :: templateHeader">
-</header>
-<!-- 	M. Krill (09.12.): sorgt dafür, dass HttpServletResponse.encodeURL aufgerufen wird, 
-		um ggf. eine Session ID automatisiert über den Servlet-Container zu ergänzen 
-		(siehe Tomcat-Doku) -->
-<form method="get" th:action="@{/doctor(name=${name},number=${number})}">
-    <fieldset>
-        <label for="name">Your doctor's name: </label>
-        <input id="name" name="name" type="text" placeholder="Your name here">
-        <hr>
-        <label for="number">Your doctor's number: </label>
-        <input id="number" name="number" type="number" placeholder="0">
-        <hr>
-        <input type="submit" value="Sign In">
-    </fieldset>
-</form>
-<footer th:replace="footer.html :: templateFooter">
-</footer>
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Doctor Sign In</title>
+	    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" th:fragment="templateMeta"/>
+	    <link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header th:replace="header.html :: templateHeader">
+		</header>
+		<!-- 	M. Krill (09.12.): thymeleaf action sorgt dafür, dass HttpServletResponse.encodeURL aufgerufen wird, 
+				um ggf. eine Session ID automatisiert über den Servlet-Container zu ergänzen 
+				(siehe Tomcat-Doku) -->
+		<form th:method="get" th:action="@{/doctor}">
+		    <fieldset>
+		        <label for="name">Your doctor's name: </label>
+		        <input id="name" name="name" type="text" placeholder="Your name here">
+		        <hr>
+		        <label for="number">Your doctor's number: </label>
+		        <input id="number" name="number" type="number" placeholder="0">
+		        <hr>
+		        <input type="submit" value="Sign In">
+		    </fieldset>
+		</form>
+		<footer th:replace="footer.html :: templateFooter">
+		</footer>
+	</body>
 </html>
